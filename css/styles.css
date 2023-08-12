@@ -63,6 +63,8 @@ img {
 /* Header section  */
 .header {
   border-bottom: 1px solid var(--color-border-button);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .header-container {
   display: flex;
@@ -113,12 +115,14 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
-
+.nav-item-list-link.current {
+  color: var(--active-link-color);
+}
 .nav-item-list-link.current::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -20px;
+  bottom: -21px;
   height: 4px;
   background-color: var(--active-link-color);
   display: block;
@@ -193,7 +197,7 @@ img {
 
   align-items: flex-start;
   gap: 10px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -220,6 +224,8 @@ img {
   border-radius: 4px;
   background-color: var(--primary-grey-second-color);
   margin-bottom: 8px;
+  align-items: center;
+  justify-content: center;
 }
 .headline-title {
   color: var(--primary-white-color);
@@ -293,24 +299,33 @@ img {
   gap: 24px;
 }
 
-.logo-icon-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--primary-blue-color);
-  fill: var(--primary-white-color);
-}
-
 .logo-icon {
   display: flex;
   margin: 0;
   padding: 0;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
+}
+
+.logo-icon-list-link {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-blue-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  fill: var(--primary-white-color);
+  background-color: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-icon-list-link:hover,
+.logo-icon-list-link:hover {
+  background-color: var(--active-link-color);
 }
 
 .section-title,
@@ -336,7 +351,10 @@ img {
   padding: 12px 24px;
   border: 1px solid var(--color-border-button);
   border-radius: 4px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-list:hover,
@@ -359,6 +377,8 @@ img {
   height: 100%;
 
   background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -377,6 +397,7 @@ img {
   background: #fcfcfc;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden .modal {
   opacity: 0;
@@ -388,14 +409,16 @@ img {
   top: 24px;
   right: 24px;
   border-radius: 50%;
-  border-color: rgba(0, 0, 0, 0.1);
-
+  border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
 
   padding: 0;
   background-color: var(--color-border-button);
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn-icon {
   fill: var(--primary-black-color);
@@ -426,8 +449,7 @@ img {
   width: 1128px;
   padding: 0;
 }
-.logo-section {
-}
+
 .logo-icon-item {
   display: flex;
   gap: 24px;
@@ -441,6 +463,7 @@ img {
   fill: #8e8f99;
   justify-content: center;
   align-items: center;
+  width: calc((100% - 120px) / 6);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .logo-icon-item-list:hover,
@@ -484,6 +507,9 @@ img {
   overflow: hidden;
 }
 
+.portfolio-photo-item .link {
+  display: block;
+}
 .overlay-text {
   color: var(--primary-grey-second-color);
   font-family: var(--primary-font);
@@ -549,8 +575,8 @@ img {
   font-weight: 400;
 }
 
-.portfolio-photo-item:hover,
-.portfolio-photo-item:focus {
+.portfolio-photo-link:hover,
+.portfolio-photo-link:focus {
   border: 1px solid var(--primary-grey-second-color);
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
@@ -564,6 +590,7 @@ img {
 
 .footer-container {
   display: flex;
+  align-items: baseline;
 }
 .footer-container-text {
   margin-right: 120px;
