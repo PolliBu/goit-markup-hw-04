@@ -107,6 +107,7 @@ img {
 }
 
 .nav-item-list-link {
+  padding: 24px 0;
   color: var(--primary-black-color);
   font-family: var(--primary-font);
   font-size: var(--primary-font-size);
@@ -123,7 +124,7 @@ img {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -28px;
+  bottom: -1px;
   height: 4px;
   background-color: var(--active-link-color);
   display: block;
@@ -205,6 +206,7 @@ img {
 .button:focus {
   background-color: var(--active-link-color);
 }
+
 /* advantages section */
 .visually-hidden {
   position: absolute;
@@ -278,6 +280,18 @@ img {
   border-radius: 0px 0px 4px 4px;
   width: calc((100% - 72px) / 4);
   background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.section-photo-text {
+  color: var(--primary-grey-color);
+  text-align: center;
+  font-size: var(--primary-font-size);
+  line-height: var(--primary-line-height);
+  letter-spacing: var(--primary-letter-spacing);
+  text-align: center;
+  margin-bottom: 8px;
 }
 .text-section-cards {
   padding: 32px 0;
@@ -548,12 +562,14 @@ img {
 
 .portfolio-photo-link:hover,
 .portfolio-photo-link:focus {
-  transform: translateY(0%);
   border: 1px solid var(--primary-grey-second-color);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+.portfolio-photo-link:hover .overlay-text {
+  transform: translateY(0%);
+}
 .overlay-img {
   position: relative;
   overflow: hidden;
