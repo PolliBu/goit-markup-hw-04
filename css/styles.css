@@ -570,6 +570,11 @@ img {
 .portfolio-photo-link:hover .overlay-text {
   transform: translateY(0%);
 }
+
+.portfolio-photo-link:focus .overlay-text {
+  transform: translateY(0%);
+}
+
 .overlay-img {
   position: relative;
   overflow: hidden;
